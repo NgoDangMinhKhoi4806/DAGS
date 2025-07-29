@@ -1,0 +1,14 @@
+# system_handler.py
+
+class SystemHandler:
+    def __init__(self):
+        self.logs = []
+
+    def assign_tutor(self, student_request):
+        pass  # Ghép yêu cầu học sinh với gia sư phù hợp
+
+    def check_permissions(self, user_role, action):
+        pass  # Kiểm tra quyền thực hiện hành động
+
+    def log_event(self, event):
+        self.logs.append(event)
