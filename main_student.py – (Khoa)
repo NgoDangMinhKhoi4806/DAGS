@@ -1,0 +1,11 @@
+from student_module import Student
+
+def main():
+    s = Student("Tuấn", "tuannv", "123456")
+    s.register()
+    s.search_tutor("Toán")
+    s.request_tutor("T01")
+    s.rate_tutor("T01", 5, "Gia sư dạy rất dễ hiểu!")
+
+if __name__ == "__main__":
+    main()
