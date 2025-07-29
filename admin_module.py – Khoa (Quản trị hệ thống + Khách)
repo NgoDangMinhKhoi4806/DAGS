@@ -1,0 +1,18 @@
+# admin_module.py
+
+class Admin:
+    def __init__(self, name):
+        self.name = name
+
+    def create_user(self, role, user_info):
+        pass  # Tạo user với vai trò cụ thể
+
+    def delete_user(self, user_id):
+        pass  # Xóa user khỏi hệ thống
+
+    def view_statistics(self):
+        pass  # Xem tổng số học sinh/gia sư, lượt thuê, đánh giá
+
+class Guest:
+    def view_homepage(self):
+        pass  # Xem trang chủ và các tính năng công khai
