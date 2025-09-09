@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Danh sách sinh viên</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../JS/DK.js"></script>
+</head>
+<body class="container py-5">
+  <!-- Header -->
+  <header class="bg-primary text-white text-center py-4">
+    <h1 class="mb-0">TRUNG TÂM GIA SƯ ONLINE</h1>
+    <p class="mb-0">HỆ THỐNG TUYỂN SINH TRỰC TUYẾN</p>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="GIAO_DIEN_CHINH.html">Trang Chủ</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="NGANH.html" target="_blank">Ngành</a></li>
+          <li class="nav-item"><a class="nav-link" href="GIANG_VIEN.html" target="_blank">Giảng Viên</a></li>
+          <li class="nav-item"><a class="nav-link" href="LIST_STU.html" target="_blank">Sinh Viên</a></li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="DANG_KI_TS.html" >Đăng Ký</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: aqua;"href="DANG_NHAP.html" target="_blank">ĐĂNG NHẬP</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <h2 class="mb-4 text-center">Danh sách sinh viên đã đăng ký</h2>
+  <table class="table table-bordered table-striped">
+    <thead class="table">
+      <tr>
+        <th>Họ và tên</th>
+        <th>Email</th>
+        <th>Ngày sinh</th>
+        <th>Ngành</th>
+      </tr>
+    </thead>
+    <tbody id="dsSinhVien"></tbody>
+  </table>
+
+  <script>
+    const danhSach = JSON.parse(localStorage.getItem("sinhVienList")) || [];
+    const tbody = document.getElementById("dsSinhVien");
+ function renderTable() {
+      tbody.innerHTML = ""; // clear bảng cũ
+
+      danhSach.forEach((sv, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${sv.hoTen}</td>
+          <td>${sv.email}</td>
+          <td>${sv.ngaysinh}</td>
+          <td>${sv.nganh}</td>
+          <td class="text-center">
+            <button class="btn btn-warning btn-sm me-2" onclick="capNhatSinhVien(${index})">Cập nhật</button>
+            <button class="btn btn-danger btn-sm" onclick="xoaSinhVien(${index})">Xóa</button>
+          </td>
+        `;
+        tbody.appendChild(row);
+         });
+    }
+
+    // Hàm xóa sinh viên
+    window.xoaSinhVien = function(index) {
+      if (confirm("Bạn có chắc muốn xóa sinh viên này?")) {
+        danhSach.splice(index, 1);
+        localStorage.setItem("sinhVienList", JSON.stringify(danhSach));
+        renderTable();
+      }
+    }
+
+    // Hàm cập nhật sinh viên
+    window.capNhatSinhVien = function(index) {
+      const sv = danhSach[index];
+
+      const hoTen = prompt("Nhập họ tên mới:", sv.hoTen);
+      if (hoTen === null) return;
+
+      const email = prompt("Nhập email mới:", sv.email);
+      if (email === null) return;
+
+      const ngaysinh = prompt("Nhập ngày sinh mới (yyyy-mm-dd):", sv.ngaysinh);
+      if (ngaysinh === null) return;
+
+      const nganh = prompt("Nhập ngành mới:", sv.nganh);
+      if (nganh === null) return;
+
+      // Ghi lại thông tin mới
+      danhSach[index] = { hoTen, email, ngaysinh, nganh };
+
+      localStorage.setItem("sinhVienList", JSON.stringify(danhSach));
+      renderTable();
+    }
+
+    // Render lần đầu khi load trang
+    renderTable();
+  </script>
+</body>
+</html>

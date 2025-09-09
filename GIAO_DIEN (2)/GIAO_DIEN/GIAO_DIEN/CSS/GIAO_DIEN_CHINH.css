@@ -1,0 +1,33 @@
+.bg-secondary{
+    margin: auto;
+    width: 100%;
+    height: 30px;
+}
+.bg-primary{
+    margin: auto;
+    width: 100%;
+    height: 30px;
+}
+.form-control{
+    width: 80%;
+    margin: 10px auto;
+}
+#xanh{
+    color: blue;
+    font-weight: bold;
+}
+#do{
+    color:red;
+    font-weight: bold;
+    font-style: italic;
+}
+#black{
+    color: darkolivegreen;
+    font-weight: bold;
+    font-style: italic;
+}
+
+b1{
+    text-align: center;
+    border-color:silver;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngành</title>
+    <script src="../JS/jquery-3.7.0.min.js"></script>
+    <script src="../JS/GIAO_DIEN_CHINH.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-4">
+        <h1 class="mb-0">TRUNG TÂM GIA SƯ ONLINE</h1>
+        <p class="mb-0">HỆ THỐNG TUYỂN SINH TRỰC TUYẾN</p>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="GIAO_DIEN_CHINH.html">Trang Chủ</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="NGANH.html" target="_blank">Ngành</a></li>
+          <li class="nav-item"><a class="nav-link" href="GIANG_VIEN.html" target="_blank">Giảng Viên</a></li>
+          <li class="nav-item"><a class="nav-link" href="LIST_STU.html" target="_blank">Sinh Viên</a></li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="DANG_KI_TS.html" >Đăng Ký</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: aqua;"href="DANG_NHAP.html" target="_blank">ĐĂNG NHẬP</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  </main>
+        <div class="row">
+        <div class="col-sm-12">
+            <div>
+                <marquee id="marqueeDate" direction="right" style="background: #000; color: white; border: 1px solid #000;font-weight: bold;"></marquee>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-xl-4"  style="padding-top: 10px;padding-bottom: 10px;">
+            <div style="background-color: #deb887;border: 1px double black;border-radius: 10px;" >
+                <table border="1" style="width:100%  " class="b1">
+                    <h5 style="text-align: center; font-weight: bold;">Họ Tên Gia Sư</h5>
+                    <hr>
+                    <ol type="I">
+                        <li id="xanh">Gia Sư Trong Nước
+                            <ol type="1">
+                                <li id="do">Trần Ngọc Đăng Khoa</li>
+                                <li id="do">Trần Tiến Khoa</li>
+                                <li id="do">Trịnh Trần Phương Tuấn</li>
+                            </ol>
+                        </li>
+                        <li id="xanh">Gia Sư Nước Ngoài
+                            <ol type="1">
+                                <li id="do">David</li>
+                                <li id="do">Jesica</li>
+                                <li id="do">Jack</li>
+                            </ol>
+                        </li>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-4" style="padding-top: 10px;padding-bottom: 10px;">
+            <div style="background-color: #C5FA64;border: 1px double black;border-radius: 10px;">
+                <h5 style="text-align: center;font-weight: bold;">Môn Học</h5>
+                <hr>
+                    <li id="xanh">Tổng hợp
+                        <ol type="1">
+                            <li id="do">Toán</li>
+                            <li id="do">Lý</li>
+                            <li id="do">Hóa</li>
+                            <li id="do">Văn</li>
+                        </ol>
+                    </li>
+                    <li id="xanh">Ngôn Ngữ
+                        <ol type="1">
+                            <li id="do">Tiếng Anh</li>
+                            <li id="do">Tiếng Trung</li>
+                            <li id="do">Tiếng Nhật</li>
+                            <li id="do">Tiếng Hàn</li>
+                        </ol>
+                    </li>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-4" style="padding-top: 10px;padding-bottom: 10px;">
+            <div style="background-color: #64defa;border: 1px double black;border-radius: 10px;">
+                <h5 style="text-align: center;font-weight: bold;">Thành Tích</h5>
+                <hr>
+                    <li id="xanh">Có 9 thủ khoa A00 toàn quốc.</li>
+                    <li id="xanh">Huy chương vàng Olympic môn Toán.</li>
+                    <li id="xanh">Có 10 học viên du học Nhật Bản.</li>
+                    <li id="xanh">Sản xuất sách "Tư Duy Ngược".</li>
+                    <ol type="1">
+                            <li id="do">Đảm bảo 100% tất cả học viên được đi du học.</li>
+                            <li id="do">Có Giấy Chứng Nhận của Trung Tâm</li>
+                    </ol>
+            </div>
+        </div>
+        <div class="container border border-dark">
+        <div class="row p-1">
+        <div class="col bg-secondary text-black text-center">
+            <h4>PHẦN ĐĂNG KÍ THÔNG TIN</h4>
+        </div>
+    </div>
+    <div class="row p-1">
+            <div class="col text-center">
+                <input type="button" value="Đăng Kí" class="btn btn-warning" onclick="DK()">
+            </div>
+    </div>
+<script>
+    function updateDate() {
+    let now = new Date();
+    let dateString = now.toLocaleDateString('vi-VN', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    document.getElementById('marqueeDate').textContent = "Hôm nay là " + dateString;
+} 
+updateDate();
+</script>
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    © 2025 TRUNG TÂM GIA SƯ ONLINE | Địa chỉ: 123 Đường 30/4, TP.HCM | Hotline: 0123 456 789
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>   
+</html>

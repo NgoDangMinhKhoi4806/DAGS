@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>ĐĂNG NHẬP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-primary text-white text-center py-4">
+    <h1 class="mb-0">TRUNG TÂM GIA SƯ ONLINE</h1>
+    <p class="mb-0">HỆ THỐNG TUYỂN SINH TRỰC TUYẾN</p>
+  </header>
+
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="GIAO_DIEN_CHINH.html">Trang Chủ</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="NGANH.html" target="_blank">Ngành</a></li>
+          <li class="nav-item"><a class="nav-link" href="GIANG_VIEN.html" target="_blank">Giảng Viên</a></li>
+          <li class="nav-item"><a class="nav-link" href="LIST_STU.html" target="_blank">Sinh Viên</a></li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="DANG_KI_TS.html" >Đăng Ký</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: aqua;"href="DANG_NHAP.html" target="_blank">ĐĂNG NHẬP</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="container my-5">
+    <div class="d-flex justify-content-center mt-5">
+      <div class="card shadow" style="width: 400px;">
+        <div class="card-body">
+          <h3 class="text-center mb-4">ĐĂNG NHẬP</h3>
+          <hr>
+          <form id="loginForm">
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="loginEmail" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="loginPass" class="form-label">Mật khẩu</label>
+              <input type="password" class="form-control" id="loginPass" required>
+            </div>
+
+            <div class="text-center">
+              <!-- ✅ phải có type="submit" -->
+              <button type="submit" class="btn btn-success">Đăng Nhập</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    © 2025 TRUNG TÂM GIA SƯ ONLINE | Địa chỉ: 123 Đường 30/4, TP.HCM | Hotline: 0123 456 789
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script đăng nhập -->
+  <script>
+    // chạy sau khi DOM load xong
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("loginForm").addEventListener("submit", function(e) {
+        e.preventDefault(); // chặn reload
+
+        let loginEmail = document.getElementById("loginEmail").value;
+        let loginPass = document.getElementById("loginPass").value;
+
+        let savedEmail = localStorage.getItem("email");
+        let savedPass = localStorage.getItem("password");
+
+        if (loginEmail === savedEmail && loginPass === savedPass) {
+          alert("Đăng nhập thành công! Xin chào " + localStorage.getItem("hoTen"));
+          window.location.href = "GIAO_DIEN_CHINH.html"; // về trang chủ
+        } else {
+          alert("Sai email hoặc mật khẩu!");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
